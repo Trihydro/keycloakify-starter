@@ -7,6 +7,7 @@ import { type TemplateProps } from "keycloakify/login/TemplateProps";
 import { useGetClassName } from "keycloakify/login/lib/useGetClassName";
 import type { KcContext } from "./kcContext";
 import type { I18n } from "./i18n";
+import logo from "./assets/logo.png"
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -55,8 +56,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     className={getClassName("kcHeaderWrapperClass")}
                     style={{ "fontFamily": '"Work Sans"' }}
                 >
-                    {msg("loginTitleHtml", realm.displayNameHtml)}!!!
+                    <img id="kc-logo" src={logo} alt=""></img>
+                    {msg("loginTitleHtml", realm.displayNameHtml)}
                 </div>
+
             </div>
 
             <div className={clsx(getClassName("kcFormCardClass"), displayWide && getClassName("kcFormCardAccountClass"))}>
