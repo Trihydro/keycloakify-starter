@@ -1,18 +1,18 @@
 
 .my-color {
-	color: red;
+	color: rgb(255, 255, 255);
 }
 
 .my-font {
 	font-family: 'Work Sans';
 }
 
-.my-root-class {
-	background: white;
-}
+/* .my-root-class {
+	background: #333;
+} */
 
 .my-root-class body {
-	background: url(./assets/background.svg) no-repeat center center fixed;
+	background: #333;
 }
 
 #kc-logo {
