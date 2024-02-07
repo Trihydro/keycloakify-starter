@@ -20,6 +20,6 @@ steps:
     yarn build
     npx keycloakify
 - task: CopyFiles@2
-    inputs:
-      Contents: 'build_keycloak/target/cv-manager-keycloak-theme-4.8.2.jar'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  inputs:
+    Contents: 'build_keycloak/target/cv-manager-keycloak-theme-4.8.2.jar'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
