@@ -21,5 +21,5 @@ steps:
     npx keycloakify
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)/build_keycloak/target/*keycloak-theme*.jar'
+    targetPath: 'build_keycloak/target/*keycloak-theme*.jar'
     artifact: 'cdot_keycloak_theme'
