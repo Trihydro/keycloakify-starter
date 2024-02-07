@@ -1,0 +1,25 @@
+trigger:
+  branches:
+      include:
+        - main
+        - azure-pipelines
+  paths:
+    include:
+      - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16'
+- script: |
+    npm install
+    yarn build
+    npx keycloakify
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/build_keycloak/target/*keycloak-theme*.jar'
+    artifact: 'cdot_keycloak_theme'
