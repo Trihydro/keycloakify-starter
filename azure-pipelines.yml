@@ -23,3 +23,9 @@ steps:
   inputs:
     Contents: 'build_keycloak/target/cv-manager-keycloak-theme-4.8.2.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+# Publish the artifacts directory for consumption in publish pipeline
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'jpo-cvmanager-keycloakify'
+    publishLocation: 'Container'
