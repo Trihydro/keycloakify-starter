@@ -204,6 +204,18 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                     </div>
                 )}
             </div>
+            <div>
+                <br />
+                <p>Can't log in? Please contact the following individuals for support.</p>
+                <ul>
+                    <li>
+                        <strong>Daniel Stephenson</strong> - <a href="mailto:dstephenson@trihydro.com">dstephenson@trihydro.com</a>
+                    </li>
+                    <li>
+                        <strong>Brandon Payne</strong> - <a href="mailto:bpayne@trihydro.com">bpayne@trihydro.com</a>
+                    </li>
+                </ul>
+            </div>
         </Template>
     );
 }
