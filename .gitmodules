@@ -1,0 +1,3 @@
+[submodule "jpo-cvmanager"]
+	path = jpo-cvmanager
+	url = https://github.com/Trihydro/jpo-cvmanager
