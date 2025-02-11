@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState, type FormEventHandler } from "react";
+import { useState, type FormEventHandler } from "react";
 import { clsx } from "keycloakify/tools/clsx";
 import { useConstCallback } from "keycloakify/tools/useConstCallback";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
@@ -209,11 +209,13 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                 <br />
                 <p>Can't log in? Please contact the following individuals for support.</p>
                 <ul>
-                    {JSON.parse(contactEmails).map((contact: { email: string; name: string }) => (
-                        <li key={contact.email}>
-                            <strong>{contact.name}</strong> - <a href={`mailto:${contact.email}`}>{contact.email}</a>
-                        </li>
-                    ))}
+                    {
+                        contactEmails.split(",").map((email) => (
+                            <li>
+                                <a href={`mailto:${email}`}>{email}</a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
         </Template>
