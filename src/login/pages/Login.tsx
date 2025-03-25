@@ -16,31 +16,6 @@ if (result.wasPresent) {
     console.log("my_custom_param", result.value);
 }
 
-var contact1email = "";
-var contact2email = "";
-
-const getEnvVar = (name: string): string => {
-    const value = process.env[name];
-    if (value === undefined) {
-        return "";
-    }
-    return value;
-}
-
-const setContactEmails = () => {
-    contact1email = getEnvVar("CONTACT1_EMAIL");
-    if (contact1email === "") {
-        console.error("CONTACT1_EMAIL is required");
-        return;
-    }
-    contact2email = getEnvVar("CONTACT2_EMAIL");
-    if (contact2email === "") {
-        console.error("CONTACT2_EMAIL is required");
-        return;
-    }
-}
-
-setContactEmails();
 
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
@@ -231,13 +206,13 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             </div>
             <div>
                 <br />
-                <p>Can't logaaaa in? Please contact the following individuals for support.</p>
+                <p>Can't log in? Please contact the following individuals for support.</p>
                 <ul>
                     <li>
-                        <a href={`mailto:${contact1email}`}>{contact1email}</a>
+                        <strong>Daniel Stephenson</strong> - <a href="mailto:dstephenson@trihydro.com">dstephenson@trihydro.com</a>
                     </li>
                     <li>
-                        <a href={`mailto:${contact2email}`}>{contact2email}</a>
+                        <strong>Brandon Payne</strong> - <a href="mailto:bpayne@trihydro.com">bpayne@trihydro.com</a>
                     </li>
                 </ul>
             </div>
